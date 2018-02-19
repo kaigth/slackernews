@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Grid correctly 1`] = `
+<div
+  className="grid"
+>
+  <div
+    className="_item"
+  >
+    <p
+      className="_title"
+    >
+      This is bat country!
+    </p>
+    <div
+      className="_detail"
+    >
+      <div
+        className="_score"
+      >
+        1 point
+      </div>
+      <div
+        className="_user"
+      >
+        By: 
+        SuperNeatGuy
+      </div>
+      <div
+        className="_time"
+      >
+        When: 
+        02/18/2018
+      </div>
+    </div>
+    <a
+      className="_link"
+      href="http://skyward.io"
+      onClick={[Function]}
+      target="_blank"
+    />
+  </div>
+  <div
+    className="_item"
+  >
+    <p
+      className="_title"
+    >
+      Wax on, wax off.
+    </p>
+    <div
+      className="_detail"
+    >
+      <div
+        className="_score"
+      >
+        10 points
+      </div>
+      <div
+        className="_user"
+      >
+        By: 
+        MrFancyPants
+      </div>
+      <div
+        className="_time"
+      >
+        When: 
+        02/18/2018
+      </div>
+    </div>
+    <a
+      className="_link"
+      href="http://skyward.io"
+      onClick={[Function]}
+      target="_blank"
+    />
+  </div>
+</div>
+`;

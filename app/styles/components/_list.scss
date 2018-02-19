@@ -1,0 +1,51 @@
+.list {
+    padding: 12px;
+    margin-bottom: 40px;
+
+    ._item {
+        color: $charcoal;
+        padding: 12px;
+        position: relative;
+        transition: background-color 0.3s ease, color 0.4s ease;
+
+        &:nth-child(odd) {
+            background-color: $grey;
+        }
+
+        &:hover {
+            background-color: $blue;
+            color: $white;
+
+            ._score, ._user, ._time {
+                color: $white;
+            }
+        }
+    }
+
+    .-show {
+        opacity: 1;
+    }
+
+    ._title {
+        font-size: 16px;
+    }
+
+    ._detail {
+        color: $medium;
+        font-size: 12px;
+    }
+
+    ._score, ._user, ._time {
+        display: inline-block;
+        padding: 6px 14px 0 0;
+        transition: color 0.3s ease;
+    }
+
+    ._link {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

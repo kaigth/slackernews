@@ -1,0 +1,42 @@
+.grid {
+    padding: 12px;
+
+    ._item {
+        border: 1px solid $grey;
+        color: $charcoal;
+        display: inline-block;
+        font-size: 0;
+        padding: 24px;
+        position: relative;
+        width: 33.3333%
+    }
+
+    .-show {
+        opacity: 1;
+    }
+
+    ._title {
+        padding: 12px 0;
+        border-bottom: 1px solid $grey;
+        font-size: 16px;
+    }
+
+    ._detail {
+        color: $medium;
+        font-size: 12px;
+        padding-top: 6px;
+    }
+
+    ._score, ._user, ._time {
+        
+        padding: 2px 0;
+    }
+
+    ._link {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

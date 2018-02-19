@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Header correctly 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="_logo"
+  >
+    <h1
+      className="_text"
+    >
+      Slacker News
+    </h1>
+  </div>
+</header>
+`;

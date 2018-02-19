@@ -1,0 +1,33 @@
+.header {
+    background-color: $white;
+    padding: 12px;
+    position: relative;
+    width: 100%;
+
+    ._logo {
+        background-image: url('../static/logo.png');
+        background-size: 60px 60px;
+        height: 60px;
+        position: relative;
+        width: 60px;
+    }
+
+    ._text {
+        display: inline-block;
+        font-size: 22px;
+        font-weight: bold;
+        padding-left: 60px;
+        position: relative;
+        margin-top: 50%;
+        transform: translateY( -50% );
+        width: 250px;
+    }
+
+    ._menu {
+        color: $blue;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY( -50% );
+    }
+}

@@ -1,0 +1,16 @@
+.list-filter {
+  border-bottom: 1px solid $charcoal;
+  padding: 12px;
+
+  ._name {
+    color: $medium;
+    font-size: 12px;
+    padding-bottom: 2px;
+  }
+
+  ._name, ._score, ._user, ._date {
+    display: inline-block;
+    padding: 0 12px 0 0;
+    cursor: pointer;
+  }
+}

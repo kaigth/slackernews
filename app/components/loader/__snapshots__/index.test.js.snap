@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Loader correctly 1`] = `
+<div
+  className="splash"
+>
+  <div
+    className="_loader"
+  />
+</div>
+`;
