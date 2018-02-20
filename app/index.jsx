@@ -9,6 +9,13 @@ import appStore from './stores/appStore';
 
 import( './styles/main.scss' );
 
+/**
+ *
+ * @const
+ * @description The beginning of the main application.
+ * @export
+ *
+ */
 const app = () => {
   render(
     <Router>

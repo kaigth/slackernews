@@ -5,22 +5,50 @@ exports[`renders the Filter correctly 1`] = `
   className="list-filter"
 >
   <div
-    className="_score"
+    className="_list-select"
+  >
+    <div
+      className="_name"
+    >
+      Show as: 
+    </div>
+    <button
+      className="button"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex="0"
+    >
+      Grid
+    </button>
+  </div>
+  <div
+    className="_name"
+  >
+    Sort By: 
+  </div>
+  <button
+    className="button"
     onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex="0"
   >
     Scores
-  </div>
-  <div
-    className="_user"
+  </button>
+  <button
+    className="button"
     onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex="0"
   >
     Users
-  </div>
-  <div
-    className="_date"
+  </button>
+  <button
+    className="button"
     onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex="0"
   >
     Date
-  </div>
+  </button>
 </div>
 `;

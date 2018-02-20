@@ -4,6 +4,14 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import unixDateFormatter from '../../util/unixDateFormatter';
 
+/**
+ *
+ * @const
+ * @description Grid of items handler.
+ * @param { Object } props An object list of properties passed down from its caller.
+ * @export
+ *
+ */
 const Grid = ( props ) => {
   const { items } = props;
 
@@ -25,6 +33,12 @@ const Grid = ( props ) => {
   );
 };
 
+/**
+ *
+ * @description PropType validation.
+ * @memberof Grid
+ *
+ */
 Grid.propTypes = {
   items: PropTypes.shape( {
     by: PropTypes.string,
