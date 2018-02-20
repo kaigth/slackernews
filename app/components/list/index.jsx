@@ -3,15 +3,21 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import unixDateFormatter from '../../util/unixDateFormatter';
-import Filter from '../filter/index';
 
+/**
+ *
+ * @const
+ * @description List of items handler.
+ * @param { Object } props An object list of properties passed down from its caller.
+ * @export
+ *
+ */
 const List = ( props ) => {
-  const { items, store } = props;
+  const { items } = props;
 
   return (
     <div className="list">
-      <Filter store={ store } />
-      { items.map( item => (
+      { items && items.map( item => (
         <div className="_item" key={ item.id }>
           <p className="_title">{ item.title }</p>
           <div className="_detail">
@@ -27,6 +33,13 @@ const List = ( props ) => {
   );
 };
 
+/**
+ *
+ * @const
+ * @description PropType validation.
+ * @memberof List
+ *
+ */
 List.propTypes = {
   items: PropTypes.shape( {
     by: PropTypes.string,
@@ -38,7 +51,6 @@ List.propTypes = {
     type: PropTypes.string,
     url: PropTypes.string,
   } ),
-  store: PropTypes.shape( {} ),
 };
 
 export default List;

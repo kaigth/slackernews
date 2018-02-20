@@ -1,11 +1,10 @@
 import React from 'react';
-import Header from './index';
+import Splash from './index';
 import renderer from 'react-test-renderer';
 
-it('renders the Header correctly', () => {
-  const store = {};
+it('renders the Loader correctly', () => {
   const tree = renderer
-    .create(<Header />)
+    .create(<Splash />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -2,17 +2,10 @@
 
 exports[`renders the Loader correctly 1`] = `
 <div
-  className="load-container -hidden "
+  className="splash -hidden "
 >
   <div
     className="_loader"
-    style={
-      Object {
-        "width": "undefined%",
-      }
-    }
-  >
-    Loading...
-  </div>
+  />
 </div>
 `;

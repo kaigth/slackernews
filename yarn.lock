@@ -5362,7 +5362,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.4, prop-types@^15.6.0:
+prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5507,6 +5507,13 @@ react-router-dom@^4.2.2:
     prop-types "^15.5.4"
     react-router "^4.2.0"
     warning "^3.0.0"
+
+react-router-mobx@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-router-mobx/-/react-router-mobx-1.2.1.tgz#28d4e0c684aeca5bc373a52fea61a0d237090cb0"
+  dependencies:
+    prop-types "^15.5.7"
+    tiny-querystring "^0.0.2"
 
 react-router@^4.2.0:
   version "4.2.0"
@@ -6485,6 +6492,10 @@ timers-browserify@^2.0.4:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.6.tgz#241e76927d9ca05f4d959819022f5b3664b64bae"
   dependencies:
     setimmediate "^1.0.4"
+
+tiny-querystring@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-querystring/-/tiny-querystring-0.0.2.tgz#a7aa2f7ba3988e2cc4c0b04752c95ba654438f60"
 
 tmp@^0.0.33:
   version "0.0.33"

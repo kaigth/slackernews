@@ -1,15 +1,77 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { observer } from 'mobx-react';
+import PropTypes from 'prop-types';
 
-const Header = () => (
-  <header className="header">
-    <div className="_logo">
-      <h1 className="_text">Slacker News</h1>
-    </div>
-    <div className="_menu">
-      <Link className="_route" to="/jobs">Jobs</Link>
-    </div>
-  </header>
-);
+import Button from '../button/index';
 
-export default Header;
+@observer
+/**
+ *
+ * @description The Header class.
+ * @export
+ * @class Header
+ *
+ */
+export default class Header extends Component {
+  /**
+   *
+   * @description Navigation handler: Jobs.
+   * @memberof Header
+   *
+   */
+  home() {
+    this.props.history.push( '/' );
+    this.forceUpdate();
+  }
+
+  /**
+   *
+   * @description Navigation handler: Jobs.
+   * @memberof Header
+   *
+   */
+  jobs() {
+    this.props.history.push( '/jobs' );
+    this.forceUpdate();
+  }
+
+  /**
+   *
+   * @description The common React rendering cycle.
+   * @memberof Header
+   *
+   */
+  render() {
+    return (
+      <header className="header">
+        <div className="_logo">
+          <h1 className="_text">Slacker News</h1>
+        </div>
+        <div className="_menu">
+          <Button
+            className="_route"
+            onClick={ () => this.home() }
+            title="Home"
+          />
+          <Button
+            className="_route"
+            onClick={ () => this.jobs() }
+            title="Jobs"
+          />
+        </div>
+      </header>
+    );
+  }
+}
+
+/**
+ *
+ * @description PropType validation.
+ * @memberof Header
+ *
+ */
+Header.propTypes = {
+  history: PropTypes.shape( {
+    push: PropTypes.func,
+  } ),
+};

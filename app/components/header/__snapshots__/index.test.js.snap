@@ -13,5 +13,25 @@ exports[`renders the Header correctly 1`] = `
       Slacker News
     </h1>
   </div>
+  <div
+    className="_menu"
+  >
+    <button
+      className="button"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex="0"
+    >
+      Home
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex="0"
+    >
+      Jobs
+    </button>
+  </div>
 </header>
 `;

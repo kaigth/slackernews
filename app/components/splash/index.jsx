@@ -9,12 +9,12 @@ import PropTypes from 'prop-types';
  * @export
  *
  */
-const Loader = ( props ) => {
-  const { loading, loadLength } = props;
+const Splash = ( props ) => {
+  const { loading } = props;
 
   return (
-    <div className={ `load-container ${ !loading ? '-hidden' : '' } ` }>
-      <div className="_loader" style={ { width: `${ loadLength }%` } }>Loading...</div>
+    <div className={ `splash ${ !loading ? '-hidden' : '' } ` }>
+      <div className="_loader" />
     </div>
   );
 };
@@ -23,12 +23,11 @@ const Loader = ( props ) => {
  *
  * @const
  * @description PropType validation.
- * @memberof Loader
+ * @memberof Splash
  *
  */
-Loader.propTypes = {
+Splash.propTypes = {
   loading: PropTypes.bool,
-  loadLength: PropTypes.number,
 };
 
-export default Loader;
+export default Splash;

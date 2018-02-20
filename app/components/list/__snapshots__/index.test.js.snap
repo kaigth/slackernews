@@ -5,28 +5,6 @@ exports[`renders the List correctly 1`] = `
   className="list"
 >
   <div
-    className="list-filter"
-  >
-    <div
-      className="_score"
-      onClick={[Function]}
-    >
-      Scores
-    </div>
-    <div
-      className="_user"
-      onClick={[Function]}
-    >
-      Users
-    </div>
-    <div
-      className="_date"
-      onClick={[Function]}
-    >
-      Date
-    </div>
-  </div>
-  <div
     className="_item"
   >
     <p

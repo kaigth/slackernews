@@ -1,3 +1,10 @@
+/**
+ *
+ * @const
+ * @description A list of constants used in the application.
+ * @export
+ *
+ */
 const constants = {
   config: {
     storiesUrl: 'https://hacker-news.firebaseio.com/v0/newstories.json',

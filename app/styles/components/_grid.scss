@@ -2,13 +2,25 @@
     padding: 12px;
 
     ._item {
-        border: 1px solid $grey;
+        border-left: 1px solid $grey;
         color: $charcoal;
         display: inline-block;
         font-size: 0;
         padding: 24px;
         position: relative;
-        width: 33.3333%
+        width: 33.3333%;
+
+        @include respond( 1199px ) {
+            width: 50%;
+        }
+
+        @include respond( 799px ) {
+            border-left: none;
+            border-bottom: 4px solid $grey;
+            font-weight: bold;
+            padding: 12px 0;
+            width: 100%;
+        }
     }
 
     .-show {

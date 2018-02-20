@@ -1,14 +1,14 @@
 #Slacker News
 
 ### Description
-A fun little hacker news remake using the [hackers news API](https://github.com/HackerNews/API).
+A fun little hacker news remake using the [hackernews API](https://github.com/HackerNews/API).
 
 ### Build
 This project usesa combination of methods below.
-  - React
+  - React 16
   - Eslint / Airbnb
   - JSDocs
-  - Mobs
+  - MobX
   - React Router 4
   - Jest
 
