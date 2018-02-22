@@ -10,12 +10,12 @@ import PropTypes from 'prop-types';
  *
  */
 const Button = ( props ) => {
-  const { onClick, title } = props;
+  const { onClick, title, classes } = props;
   const passThrough = () => {};
 
   return (
     <button
-      className="button"
+      className={ `button ${ classes }` }
       onClick={ onClick }
       onKeyPress={ passThrough }
       tabIndex="0"
@@ -32,6 +32,7 @@ const Button = ( props ) => {
  *
  */
 Button.propTypes = {
+  classes: PropTypes.string,
   onClick: PropTypes.func,
   title: PropTypes.string,
 };

@@ -17,6 +17,7 @@ export default class Globals {
   @observable dataLoading
   @observable loadLength
   @observable listMode
+  @observable animate
 
   /**
    *
@@ -227,12 +228,10 @@ export default class Globals {
    */
   setSingle( data ) {
     this.activeArray.loads.current += 1;
-    this.loaderCount += 1;
 
     this.activeArray.items = [ ...this.activeArray.items, data ];
 
-    if ( this.activeArray.loads.current >= this.activeArray.loads.max
-      || this.activeArray.loads.current === this.activeArray.ids.length ) {
+    if ( this.maxedIncrementLoads() || this.maxedLoads() ) {
       this.activeArray.loads.max += this.incrementalLoads;
       this.cacheArray( data.type );
       this.resetLoader();
@@ -247,10 +246,27 @@ export default class Globals {
    */
   resetLoader() {
     this.loaderCount = 0;
-    this.loaderLength = 0;
+    this.showLoader();
 
     if ( this.initialLoad ) this.initialLoad = false;
-    this.dataLoading = false;
+  }
+
+  /**
+   *
+   * @description Display the item Loader.
+   * @memberof Globals
+   *
+   */
+  showLoader() {
+    const timeout = setTimeout( () => {
+      this.dataLoading = false;
+      clearTimeout( timeout );
+    }, 400 );
+
+    const timeout2 = setTimeout( () => {
+      this.loadLength = 0;
+      clearTimeout( timeout2 );
+    }, 600 );
   }
 
   /**
@@ -275,9 +291,30 @@ export default class Globals {
    *
    */
   @action loadMore() {
+    if ( this.dataLoading || this.maxedLoads() ) return;
     this.dataLoading = true;
 
     this.newStoryList();
+  }
+
+  /**
+   *
+   * @description Check to see if the maximum set of loads has been reached.
+   * @memberof Globals
+   *
+   */
+  maxedLoads() {
+    return this.activeArray.loads.current === this.activeArray.ids.length;
+  }
+
+  /**
+   *
+   * @description Check the current max increment load for pagination.
+   * @memberof Globals
+   *
+   */
+  maxedIncrementLoads() {
+    return this.activeArray.loads.current >= this.activeArray.loads.max;
   }
 
   /**
@@ -292,10 +329,21 @@ export default class Globals {
     const data = await response.json();
 
     if ( !data ) this.handleError( 'unknown' );
-
-    this.loadLength = ( this.loaderCount / ( this.incrementalLoads - 1 ) ) * 100;
+    this.handleLoad();
 
     data.length > 0 ? this.newStoryList( data ) : this.setSingle( data );
+  }
+
+  /**
+   *
+   * @description Handles final load alls such as loader length, animation and loadcount.
+   * @memberof Globals
+   *
+   */
+  handleLoad() {
+    this.loaderCount += 1;
+
+    this.loadLength = ( this.loaderCount / ( this.incrementalLoads - 1 ) ) * 100;
   }
 
   /**

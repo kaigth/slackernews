@@ -2,7 +2,7 @@
 
 exports[`renders the Filter correctly 1`] = `
 <button
-  className="button"
+  className="button undefined"
   onClick={undefined}
   onKeyPress={[Function]}
   tabIndex="0"

@@ -12,34 +12,33 @@ import Button from '../button/index';
  *
  */
 const Filter = ( props ) => {
-  const { store } = props;
+  const { sort, listMode, switchList } = props;
 
   return (
     <div className="list-filter">
-      <div className="_list-select">
-        <div className="_name">Show as: </div>
-        <Button
-          className="_score"
-          onClick={ () => store.switchList() }
-          title={ store.listMode === 'list' ? 'Grid' : 'List' }
-        />
-      </div>
       <div className="_name">Sort By: </div>
       <Button
-        className="_score"
-        onClick={ () => store.sortArray( 'score' ) }
+        classes="_score _link"
+        onClick={ () => sort( 'score' ) }
         title="Scores"
       />
       <Button
-        className="_user"
-        onClick={ () => store.sortArray( 'by' ) }
+        classes="_user _link"
+        onClick={ () => sort( 'by' ) }
         title="Users"
       />
       <Button
-        className="_date"
-        onClick={ () => store.sortArray( 'time' ) }
+        classes="_date _link"
+        onClick={ () => sort( 'time' ) }
         title="Date"
       />
+      <div className="_list-select">
+        <div className="_name">Show as: </div>
+        <Button
+          onClick={ () => switchList() }
+          title={ listMode === 'list' ? 'Grid' : 'List' }
+        />
+      </div>
     </div>
   );
 };
@@ -51,7 +50,9 @@ const Filter = ( props ) => {
  *
  */
 Filter.propTypes = {
-  store: PropTypes.shape( {} ),
+  listMode: PropTypes.string,
+  sort: PropTypes.func,
+  switchList: PropTypes.func,
 };
 
 export default Filter;

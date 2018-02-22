@@ -14,7 +14,7 @@ const Loader = ( props ) => {
 
   return (
     <div className={ `load-container ${ !loading ? '-hidden' : '' } ` }>
-      <div className="_loader" style={ { width: `${ loadLength }%` } }>Loading...</div>
+      <div className="_loader" style={ { width: `${ loadLength }%` } } />
     </div>
   );
 };

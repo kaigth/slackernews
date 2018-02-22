@@ -17,7 +17,7 @@ exports[`renders the Header correctly 1`] = `
     className="_menu"
   >
     <button
-      className="button"
+      className="button _link"
       onClick={[Function]}
       onKeyPress={[Function]}
       tabIndex="0"
@@ -25,7 +25,7 @@ exports[`renders the Header correctly 1`] = `
       Home
     </button>
     <button
-      className="button"
+      className="button _link"
       onClick={[Function]}
       onKeyPress={[Function]}
       tabIndex="0"

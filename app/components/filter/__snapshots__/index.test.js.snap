@@ -5,6 +5,35 @@ exports[`renders the Filter correctly 1`] = `
   className="list-filter"
 >
   <div
+    className="_name"
+  >
+    Sort By: 
+  </div>
+  <button
+    className="button _score _link"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex="0"
+  >
+    Scores
+  </button>
+  <button
+    className="button _user _link"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex="0"
+  >
+    Users
+  </button>
+  <button
+    className="button _date _link"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex="0"
+  >
+    Date
+  </button>
+  <div
     className="_list-select"
   >
     <div
@@ -13,42 +42,13 @@ exports[`renders the Filter correctly 1`] = `
       Show as: 
     </div>
     <button
-      className="button"
+      className="button undefined"
       onClick={[Function]}
       onKeyPress={[Function]}
       tabIndex="0"
     >
-      Grid
+      List
     </button>
   </div>
-  <div
-    className="_name"
-  >
-    Sort By: 
-  </div>
-  <button
-    className="button"
-    onClick={[Function]}
-    onKeyPress={[Function]}
-    tabIndex="0"
-  >
-    Scores
-  </button>
-  <button
-    className="button"
-    onClick={[Function]}
-    onKeyPress={[Function]}
-    tabIndex="0"
-  >
-    Users
-  </button>
-  <button
-    className="button"
-    onClick={[Function]}
-    onKeyPress={[Function]}
-    tabIndex="0"
-  >
-    Date
-  </button>
 </div>
 `;

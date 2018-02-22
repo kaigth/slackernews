@@ -15,3 +15,7 @@ body {
     -webkit-touch-callout: none;
     @include font-family-sans();
 }
+
+#root {
+    position: relative;
+}
