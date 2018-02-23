@@ -40,13 +40,16 @@ module.exports = {
   output: {
     filename: 'app.js',
     path: path.join( __dirname, '../', 'dist' ),
-    publicPath: '/dist',
+    publicPath: '/',
   },
   resolve: {
     extensions: [ '.jsx', '.js' ]
   },
   plugins: [new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: './index.html'
+    template: './index.html',
+    files: {
+      js: ["./app.js"]
+    }
   })]
 };

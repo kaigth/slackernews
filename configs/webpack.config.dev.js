@@ -1,4 +1,5 @@
 var path = require( 'path' );
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './app/index.jsx',
@@ -35,16 +36,23 @@ module.exports = {
       {
         test: /\.jsx|.js$/,
         use: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: ['/node_modules/']
       }
     ]
   },
   output: {
     filename: 'app.js',
     path: path.join( __dirname, '../', 'dist' ),
-    publicPath: '/dist',
+    publicPath: '/',
   },
   resolve: {
     extensions: [ '.jsx', '.js' ]
-  }
+  },
+  plugins: [new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: './index.html',
+    files: {
+      js: ["./app.js"]
+    }
+  })]
 };
