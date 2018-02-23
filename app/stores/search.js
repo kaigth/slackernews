@@ -50,6 +50,7 @@ export default class Search {
    * @memberof Search
    * @param { array } arr The array used to check against.
    * @param { string } term The term to search against.
+   * @return { string } Returns the term typed in to the search bar.
    *
    */
   @action search( arr, term ) {

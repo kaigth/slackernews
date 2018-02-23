@@ -28,8 +28,8 @@ export default class Routes extends Component {
         <div className={ `root ${ store.globals.pageAnimate ? '-show' : '-hide' }` }>
           <Route exact path="/" component={ Landing } />
           <Route path="/jobs" component={ Jobs } />
-          <Loader loading={ store.globals.dataLoading } loadLength={ store.globals.loadLength } />
         </div>
+        <Loader loading={ store.globals.dataLoading } loadLength={ store.globals.loadLength } />
       </div>
     );
   }

@@ -4,6 +4,7 @@ exports[`renders the List correctly 1`] = `
 <div
   className="list"
 >
+  <div />
   <div
     className="_item"
   >

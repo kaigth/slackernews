@@ -4,6 +4,7 @@ exports[`renders the Button correctly 1`] = `
 <div
   className="grid"
 >
+  <div />
   <div
     className="_item"
   >
