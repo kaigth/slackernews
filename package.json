@@ -5,7 +5,8 @@
   "main": "./app/index.js",
   "scripts": {
     "build": "npx webpack --config ./configs/webpack.config.prod.js -p",
-    "start": "npx webpack-dev-server --config ./configs/webpack.config.dev.js --open --debug",
+    "docs": "npx jsdoc --configure ./jsdocs.json --verbose",
+    "start": "npx webpack-dev-server --config ./configs/webpack.config.dev.js --open",
     "test": "npx jest",
     "test:reset": "npx jest --updateSnapshot"
   },
@@ -28,7 +29,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "file-loader": "^1.1.6",
+    "jsdoc": "^3.5.5",
     "jest": "^22.3.0",
+    "minami": "^1.2.3",
     "node-sass": "^4.7.2",
     "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",

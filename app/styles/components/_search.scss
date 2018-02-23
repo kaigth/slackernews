@@ -2,6 +2,9 @@
   padding: 12px;
 
   ._input {
-
+    border: none;
+    border-bottom: 2px solid $blue;
+    outline: 0;
+    padding: 4px;
   }
 }

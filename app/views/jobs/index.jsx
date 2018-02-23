@@ -142,7 +142,10 @@ export default class Jobs extends Component {
   render() {
     return (
       <div>
-        <Header history={ this.props.history } />
+        <Header
+          history={ this.props.history }
+          animateOut={ cb => this.globals.animateOut( cb ) }
+        />
         <Filter
           listMode={ this.globals.listMode }
           sort={ str => this.globals.sortArray( str ) }

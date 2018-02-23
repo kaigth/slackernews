@@ -32,11 +32,6 @@ export default class Search {
      *
      */
     this.searchArray = [];
-
-    this.noResults = {
-      id: 0,
-      title: 'Bummer, there were no results!',
-    };
   }
 
   /**
@@ -53,7 +48,7 @@ export default class Search {
    *
    * @description The search function that checks against an array.
    * @memberof Search
-   * @param { string } arr The array used to check against.
+   * @param { array } arr The array used to check against.
    * @param { string } term The term to search against.
    *
    */
@@ -64,7 +59,6 @@ export default class Search {
     this.searchArray = [];
 
     arr.map( ( item ) => {
-      /* eslint-disable no-lonely-if */
       if ( regex.test( item.title ) ) {
         this.searchArray.push( item );
       }

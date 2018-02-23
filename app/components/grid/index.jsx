@@ -17,6 +17,7 @@ const Grid = ( props ) => {
 
   return (
     <div className="grid">
+      { items.length <= 0 ? <div>Bummer, no results found.</div> : <div /> }
       { items.map( item => (
         <div className="_item" key={ item.id }>
           <p className="_title">{ item.title }</p>

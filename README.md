@@ -4,7 +4,7 @@
 A fun little hacker news remake using the [hackernews API](https://github.com/HackerNews/API).
 
 ### Build
-This project usesa combination of methods below.
+This project uses a combination of methods below.
   - React 16
   - Eslint / Airbnb
   - JSDocs

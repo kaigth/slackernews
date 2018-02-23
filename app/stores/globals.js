@@ -17,7 +17,7 @@ export default class Globals {
   @observable dataLoading
   @observable loadLength
   @observable listMode
-  @observable animate
+  @observable pageAnimate
 
   /**
    *
@@ -143,6 +143,47 @@ export default class Globals {
      *
      */
     this.loadLength = 0;
+
+    /**
+     *
+     * @const
+     * @description Handles page animation.
+     *
+     */
+    this.pageAnimate = false;
+  }
+
+  /**
+   *
+   * @description Animate out the entire page when routing.
+   * @memberof Globals
+   * @param { function } cb The callback to fire after animation delay.
+   * @param { number } delay The delay to animate, defaults to 400.
+   *
+   */
+  @action animateOut( cb, delay = 400 ) {
+    if ( !this.pageAnimate ) return;
+    this.pageAnimate = false;
+
+    const animateTimeout = setTimeout( () => {
+      cb();
+      clearTimeout( animateTimeout );
+    }, delay );
+  }
+
+  /**
+   *
+   * @description Animate in the entire page when routing.
+   * @memberof Globals
+   * @param { number } delay The delay to animate, defaults to 400.
+   *
+   */
+  @action animateIn( delay = 400 ) {
+    if ( this.pageAnimate ) return;
+    const animateTimeout2 = setTimeout( () => {
+      this.pageAnimate = true;
+      clearTimeout( animateTimeout2 );
+    }, delay );
   }
 
   /**
@@ -205,7 +246,7 @@ export default class Globals {
    * The service requires a list of ID's then parse them through a seperate single
    * item request. Not super efficient but it works.
    * @memberof Globals
-   * @param { string } data An array of items by ID to be sorted through.
+   * @param { array } data An array of items by ID to be sorted through.
    *
    */
   newStoryList( data ) {
@@ -223,7 +264,7 @@ export default class Globals {
    * @description Sets the single item in a array list via spread. Spread prevents
    * multiple ID's from overlap.
    * @memberof Globals
-   * @param { string } data The single object item to be placed in an array via spread.
+   * @param { object } data The single object item to be placed in an array via spread.
    *
    */
   setSingle( data ) {
@@ -301,6 +342,7 @@ export default class Globals {
    *
    * @description Check to see if the maximum set of loads has been reached.
    * @memberof Globals
+   * @return { bool } Returns true or false if the load is equal to the length of ids.
    *
    */
   maxedLoads() {
@@ -311,6 +353,8 @@ export default class Globals {
    *
    * @description Check the current max increment load for pagination.
    * @memberof Globals
+   * @return { bool } Returns true or false if the load is equal or greater than
+   * the max per load.
    *
    */
   maxedIncrementLoads() {
@@ -352,6 +396,7 @@ export default class Globals {
    * calls the sortSwitch.
    * @memberof Globals
    * @param { string } err The error passed from the service if applicable.
+   * @return { string } Returns the error generated from the promise.
    *
    */
   handleError( err ) {
