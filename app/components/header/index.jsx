@@ -20,8 +20,10 @@ export default class Header extends Component {
    *
    */
   home() {
-    this.props.history.push( '/' );
-    this.forceUpdate();
+    this.props.animateOut( () => {
+      this.props.history.push( '/' );
+      this.forceUpdate();
+    } );
   }
 
   /**
@@ -31,8 +33,10 @@ export default class Header extends Component {
    *
    */
   jobs() {
-    this.props.history.push( '/jobs' );
-    this.forceUpdate();
+    this.props.animateOut( () => {
+      this.props.history.push( '/jobs' );
+      this.forceUpdate();
+    } );
   }
 
   /**
@@ -49,12 +53,12 @@ export default class Header extends Component {
         </div>
         <div className="_menu">
           <Button
-            className="_route"
+            classes="_link"
             onClick={ () => this.home() }
             title="Home"
           />
           <Button
-            className="_route"
+            classes="_link"
             onClick={ () => this.jobs() }
             title="Jobs"
           />
@@ -71,6 +75,7 @@ export default class Header extends Component {
  *
  */
 Header.propTypes = {
+  animateOut: PropTypes.func,
   history: PropTypes.shape( {
     push: PropTypes.func,
   } ),

@@ -15,3 +15,19 @@ body {
     -webkit-touch-callout: none;
     @include font-family-sans();
 }
+
+.root {
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+
+    &.-show {
+        opacity: 1;
+        transform: translateY( 0 );
+        visibility: visible;
+    }
+
+    &.-hide {
+        opacity: 0;
+        transform: translateY( -10px );
+        visibility: hidden;
+    }
+}

@@ -7,6 +7,7 @@ import Header from '../../components/header/index';
 import List from '../../components/list/index';
 import Grid from '../../components/grid/index';
 import Filter from '../../components/filter/index';
+import Search from '../../components/search/index';
 
 @withRouter
 @inject( 'store' )
@@ -33,7 +34,23 @@ export default class Landing extends Component {
      * @description The global store accessible via MobX.
      *
      */
-    this.store = this.props.store.globals;
+    this.globals = this.props.store.globals;
+
+    /**
+     *
+     * @const
+     * @description The search store accessible via MobX.
+     *
+     */
+    this.searchStore = this.props.store.search;
+
+    /**
+     *
+     * @const
+     * @description The search store accessible via MobX.
+     *
+     */
+    this.handleChange = ::this.handleChange;
   }
 
   /**
@@ -44,11 +61,12 @@ export default class Landing extends Component {
    *
    */
   componentWillMount() {
-    if ( this.store.stories.items.length <= 0 ) {
-      this.store.fetchItems( 'stories' );
+    if ( this.globals.stories.items.length <= 0 ) {
+      this.globals.fetchItems( 'stories' );
     }
 
-    this.store.activeItems( '/' );
+    this.searchStore.clearTerm();
+    this.globals.activeItems( '/' );
   }
 
   /**
@@ -82,8 +100,8 @@ export default class Landing extends Component {
     const wrappedElement = document.getElementById( 'root' );
     const isAtBottom = el => el.getBoundingClientRect().bottom <= window.innerHeight;
 
-    if ( isAtBottom( wrappedElement ) && !this.store.dataLoading ) {
-      this.store.loadMore();
+    if ( isAtBottom( wrappedElement ) ) {
+      this.globals.loadMore();
     }
   }
 
@@ -94,11 +112,25 @@ export default class Landing extends Component {
    *
    */
   loadList() {
+    const items = this.searchStore.term !== ''
+      ? this.searchStore.searchArray
+      : this.globals.activeArray.items;
+
     return (
-      this.store.listMode === 'list' ?
-        <List items={ this.store.activeArray.items } store={ this.store } /> :
-        <Grid items={ this.store.activeArray.items } store={ this.store } />
+      this.globals.listMode === 'list' ?
+        <List items={ items } /> :
+        <Grid items={ items } />
     );
+  }
+
+  /**
+   *
+   * @description Handle search input changes.
+   * @memberof Landing
+   *
+   */
+  handleChange( evt ) {
+    this.searchStore.search( this.globals.activeArray.items, evt.target.value );
   }
 
   /**
@@ -110,8 +142,16 @@ export default class Landing extends Component {
   render() {
     return (
       <div>
-        <Header history={ this.props.history } />
-        <Filter store={ this.store } />
+        <Header
+          history={ this.props.history }
+          animateOut={ cb => this.globals.animateOut( cb ) }
+        />
+        <Filter
+          listMode={ this.globals.listMode }
+          sort={ str => this.globals.sortArray( str ) }
+          switchList={ () => this.globals.switchList() }
+        />
+        <Search value={ this.searchStore.term } onChange={ evt => this.handleChange( evt ) } />
         { !this.dataLoading ? this.loadList() : <div /> }
       </div>
     );
@@ -128,5 +168,6 @@ Landing.propTypes = {
   history: PropTypes.shape( {} ),
   store: PropTypes.shape( {
     globals: PropTypes.shape( {} ),
+    search: PropTypes.shape( {} ),
   } ),
 };

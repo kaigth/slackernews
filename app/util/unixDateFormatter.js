@@ -3,6 +3,7 @@
  * @description Format dates based off unix date format.
  * @param { number } unix The unix timestamp.
  * @return { string } Returns a formatted unix string.
+ * @function
  *
  */
 export default function unixDateFormatter( unix ) {

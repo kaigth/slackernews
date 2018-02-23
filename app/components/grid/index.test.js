@@ -3,7 +3,7 @@ import Grid from './index';
 import { BrowserRouter as Router } from "react-router-dom";
 import renderer from 'react-test-renderer';
 
-it('renders the Grid correctly', () => {
+it('renders the Button correctly', () => {
   const testItems = [
     {
       by: 'SuperNeatGuy',

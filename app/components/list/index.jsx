@@ -17,6 +17,7 @@ const List = ( props ) => {
 
   return (
     <div className="list">
+      { items.length <= 0 ? <div>Bummer, no results found.</div> : <div /> }
       { items && items.map( item => (
         <div className="_item" key={ item.id }>
           <p className="_title">{ item.title }</p>

@@ -4,9 +4,10 @@
   "description": "A fun project for Skyward.io",
   "main": "./app/index.js",
   "scripts": {
-    "build": "npx webpack --config ./configs/webpack.config.prod.js -p",
-    "start": "npx webpack-dev-server --config ./configs/webpack.config.dev.js --open --debug",
-    "test": "npx jest",
+    "build": "./node_modules/.bin/webpack --config ./configs/webpack.config.prod.js -p",
+    "docs": "npx jsdoc --configure ./jsdocs.json --verbose",
+    "start": "npx webpack-dev-server --config ./configs/webpack.config.dev.js --open",
+    "test": "./node_modules/.bin/jest",
     "test:reset": "npx jest --updateSnapshot"
   },
   "author": "James Smith",
@@ -29,6 +30,8 @@
     "eslint-plugin-react": "^7.6.1",
     "file-loader": "^1.1.6",
     "jest": "^22.3.0",
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3",
     "node-sass": "^4.7.2",
     "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
@@ -39,6 +42,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "html-webpack-plugin": "^2.30.1",
     "isomorphic-fetch": "^2.2.1",
     "mobx": "^3.5.1",
     "mobx-react": "^4.4.2",
@@ -46,6 +50,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "react-router-mobx": "^1.2.1"
+    "react-router-mobx": "^1.2.1",
+    "react-transition-group": "^2.2.1"
   }
 }

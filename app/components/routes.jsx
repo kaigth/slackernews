@@ -20,12 +20,15 @@ import Jobs from '../views/jobs/index';
 export default class Routes extends Component {
   render() {
     const { store } = this.props;
+    if ( !store.globals.initialLoad ) store.globals.animateIn();
 
     return (
       <div>
         <Splash loading={ store.globals.initialLoad } />
-        <Route exact path="/" component={ Landing } />
-        <Route path="/jobs" component={ Jobs } />
+        <div className={ `root ${ store.globals.pageAnimate ? '-show' : '-hide' }` }>
+          <Route exact path="/" component={ Landing } />
+          <Route path="/jobs" component={ Jobs } />
+        </div>
         <Loader loading={ store.globals.dataLoading } loadLength={ store.globals.loadLength } />
       </div>
     );

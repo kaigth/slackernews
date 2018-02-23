@@ -11,8 +11,6 @@ exports[`renders the Loader correctly 1`] = `
         "width": "undefined%",
       }
     }
-  >
-    Loading...
-  </div>
+  />
 </div>
 `;

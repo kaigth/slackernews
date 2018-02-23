@@ -3,7 +3,8 @@
  * @description Ascending alphabetical sort.
  * @param { Array } arr The array used.
  * @param { string } obj The specific key in the array assortment.
- * @return { number } Returns sorted string via localeCompare
+ * @return { array } Returns the array that was sorted.
+ * @function
  *
  */
 const alphabeticalSortASC = ( arr, obj ) =>
@@ -14,7 +15,8 @@ const alphabeticalSortASC = ( arr, obj ) =>
  * @description Descending alphabetical sort.
  * @param { Array } arr The array used.
  * @param { string } obj The specific key in the array assortment.
- * @return { number } Returns sorted string via localeCompare
+ * @return { array } Returns the array that was sorted.
+ * @function
  *
  */
 const alphabeticalSortDESC = ( arr, obj ) =>
@@ -25,7 +27,8 @@ const alphabeticalSortDESC = ( arr, obj ) =>
  * @description Numerical Ascending sort.
  * @param { Array } arr The array used.
  * @param { string } obj The specific key in the array assortment.
- * @return { number } Returns sort order via numerical value.
+ * @return { array } Returns the array that was sorted.
+ * @function
  *
  */
 const numericalSortASC = ( arr, obj ) =>
@@ -36,7 +39,8 @@ const numericalSortASC = ( arr, obj ) =>
  * @description Numerical Descending sort.
  * @param { Array } arr The array used.
  * @param { string } obj The specific key in the array assortment.
- * @return { number } Returns sort order via numerical value.
+ * @return { array } Returns the array that was sorted.
+ * @function
  *
  */
 const numericalSortDESC = ( arr, obj ) =>
@@ -48,6 +52,8 @@ const numericalSortDESC = ( arr, obj ) =>
  * @param { Array } arr The array used.
  * @param { string } obj The specific key in the array assortment.
  * @param { string } direction The direction of ascension/descension.
+ * @return { array } Returns the array that was sorted.
+ * @function
  * @export
  *
  */

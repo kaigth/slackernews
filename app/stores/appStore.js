@@ -1,4 +1,5 @@
 import Globals from './globals';
+import Search from './search';
 
 /**
  *
@@ -9,6 +10,7 @@ import Globals from './globals';
  */
 const appStore = {
   globals: new Globals(),
+  search: new Search(),
 };
 
 export default appStore;

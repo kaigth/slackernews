@@ -5,9 +5,21 @@
   color: $white;
   font-size: 14px;
   margin-right: 6px;
-  padding: 6px 19px;
+  padding: 4px 12px;
   -webkit-appearance: none;
   transition: background-color 0.4s ease, color 0.4s ease;
+
+  &._link {
+    background: none;
+    border: none;
+    color: $blue;
+
+    &:hover {
+      border: none;
+      background: none;
+      color: $charcoal;
+    }
+  }
 
   &:hover {
     border: 1px solid $blue;

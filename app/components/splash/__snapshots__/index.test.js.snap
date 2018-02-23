@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders the Loader correctly 1`] = `
+exports[`renders the Splash overlay correctly 1`] = `
 <div
   className="splash -hidden "
 >
